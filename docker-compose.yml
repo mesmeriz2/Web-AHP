@@ -1,0 +1,68 @@
+services:
+  db:
+    image: postgres:16
+    container_name: ${PROJECT_NAME}_db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - ahp_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ${PROJECT_NAME}_backend
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      AHP_RI_TABLE_PATH: ${AHP_RI_TABLE_PATH}
+      # 시놀로지 역프록시(mem.photos:15175) 사용 시 백엔드 기본값에 이미 포함. 추가 origin은 .env CORS_ORIGINS에.
+      CORS_ORIGINS: ${CORS_ORIGINS:-}
+    ports:
+      - "${BACKEND_PORT}:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ${PROJECT_NAME}_frontend
+    env_file:
+      - .env
+    environment:
+      # 시놀로지 역프록시(mem.photos:15175) 사용 시 빈 값으로 두면 상대 경로 사용. 로컬은 http://localhost:BACKEND_PORT
+      VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://localhost:8006}
+      # /api 프록시 대상. 시놀로지에서 역프록시가 프론트만 받을 때 사용. 비우면 기본값 http://backend:8000
+      VITE_PROXY_API_TARGET: ${VITE_PROXY_API_TARGET:-http://backend:8000}
+      # 역프록시 경유 시 HMR WebSocket용 (예: VITE_HMR_HOST=mem.photos, VITE_HMR_PORT=15175)
+      VITE_HMR_HOST: ${VITE_HMR_HOST:-}
+      VITE_HMR_PORT: ${VITE_HMR_PORT:-}
+      VITE_CR_THRESHOLD: ${CR_THRESHOLD}
+      VITE_PAIRWISE_SCALE: ${VITE_PAIRWISE_SCALE:-1,2,3,4,5,6,7,8,9}
+    ports:
+      - "${FRONTEND_PORT}:5173"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - frontend_node_modules:/app/node_modules
+    command: ["sh", "-c", "npm install && npm run dev"]
+
+volumes:
+  ahp_db_data:
+  frontend_node_modules:

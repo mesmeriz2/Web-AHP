@@ -1,0 +1,186 @@
+:root {
+  /* 색상 팔레트 */
+  --color-primary: #0ea5e9;
+  --color-primary-dark: #0369a1;
+  --color-primary-light: #67e8f9;
+  --color-primary-hover: #0284c7;
+  --color-secondary: #d946ef;
+  --color-secondary-dark: #a21caf;
+  --color-secondary-light: #f0abfc;
+  --color-secondary-hover: #c026d3;
+  --color-success: #16a34a;
+  --color-success-dark: #15803d;
+  --color-success-hover: #059669;
+  --color-warning: #d97706;
+  --color-warning-dark: #c2410c;
+  --color-warning-hover: #ea580c;
+  --color-error: #dc2626;
+  --color-error-dark: #b91c1c;
+  --color-error-hover: #ef4444;
+  
+  /* 추가 인터랙션 색상 */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  
+  /* 배경색 */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #eef2ff;
+  --color-bg-tertiary: #dbe6ff;
+  --color-bg-dark: #070b18;
+  --color-bg-elevated: #f8faff;
+  --color-bg-accent: #e6f6ff;
+  --color-bg-danger: #fef2f2;
+  --color-bg-warning: #fffbeb;
+  --color-bg-success: #ecfdf3;
+  --color-bg-info: #eff6ff;
+  
+  /* 버튼 전용 배경색 (진한 색, 회색/검정 아님) */
+  --color-bg-button-primary: var(--color-primary-dark);
+  --color-bg-button-primary-hover: var(--color-primary);
+  --color-bg-button-secondary: var(--color-secondary-dark);
+  --color-bg-button-secondary-hover: var(--color-secondary);
+  --color-bg-button-outline: transparent;
+  --color-bg-button-outline-hover: var(--color-gray-50);
+  --color-bg-button-ghost: transparent;
+  --color-bg-button-ghost-hover: var(--color-gray-100);
+  --color-bg-button-danger: var(--color-error-dark);
+  --color-bg-button-danger-hover: var(--color-error);
+  /* 쌍대비교 스케일 버튼용 */
+  --color-scale-left-bg: #e3f2fd;
+  --color-scale-left-bg-hover: #bbdefb;
+  --color-scale-left-text: #1565c0;
+  --color-scale-left-border: #bbdefb;
+  --color-scale-left-border-hover: #1976d2;
+  --color-scale-equal-bg: #f5f5f5;
+  --color-scale-equal-bg-hover: #eeeeee;
+  --color-scale-equal-text: #424242;
+  --color-scale-equal-border: #e0e0e0;
+  --color-scale-equal-border-hover: #bdbdbd;
+  --color-scale-right-bg: #ffebee;
+  --color-scale-right-bg-hover: #ffcdd2;
+  --color-scale-right-text: #c62828;
+  --color-scale-right-border: #ffcdd2;
+  --color-scale-right-border-hover: #d32f2f;
+  
+  /* 텍스트 색상 */
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748b;
+  --color-text-inverse: #ffffff;
+  --color-text-on-primary: #ffffff;
+  --color-text-on-secondary: #ffffff;
+  --color-text-on-success: #ffffff;
+  --color-text-on-warning: #ffffff;
+  --color-text-on-error: #ffffff;
+  --color-text-on-light: #1f2937;
+  --color-text-accent: #1d4ed8;
+  
+  /* 테두리 색상 */
+  --color-border: #d8e0ea;
+  --color-border-light: #eef2f7;
+  --color-border-dark: #6c7ba8;
+  --color-border-primary: var(--color-primary);
+  --color-border-secondary: var(--color-secondary);
+  --color-border-error: var(--color-error);
+  --color-border-focus: var(--color-primary-light);
+
+  /* 레트로-퓨처리스틱 보조 토큰 */
+  --color-neon-cyan: #67e8f9;
+  --color-neon-magenta: #ff4fd8;
+  --color-neon-indigo: #4338ca;
+  --color-neon-lime: #a3e635;
+  --color-void-900: #070b18;
+  --color-void-700: #121a33;
+  --glow-cyan: 0 0 0.4rem rgba(103, 232, 249, 0.65), 0 0 1.4rem rgba(103, 232, 249, 0.35);
+  --glow-magenta: 0 0 0.5rem rgba(255, 79, 216, 0.65), 0 0 1.6rem rgba(255, 79, 216, 0.3);
+  
+  /* 폰트 */
+  --font-family: "Sora", "Noto Sans KR", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-display: "Orbitron", "Sora", "Noto Sans KR", sans-serif;
+  --font-family-mono: "Consolas", "Monaco", "Courier New", monospace;
+  
+  /* 폰트 크기 */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;    /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+  
+  /* 폰트 웨이트 */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* 라인 하이트 */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* 간격 시스템 (4px 기준) */
+  --spacing-1: 0.25rem;   /* 4px */
+  --spacing-2: 0.5rem;    /* 8px */
+  --spacing-3: 0.75rem;   /* 12px */
+  --spacing-4: 1rem;      /* 16px */
+  --spacing-5: 1.25rem;   /* 20px */
+  --spacing-6: 1.5rem;    /* 24px */
+  --spacing-8: 2rem;      /* 32px */
+  --spacing-10: 2.5rem;   /* 40px */
+  --spacing-12: 3rem;     /* 48px */
+  --spacing-16: 4rem;     /* 64px */
+  
+  /* 브레이크포인트 */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  
+  /* 그림자 */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* 테두리 반경 */
+  --radius-sm: 0.25rem;   /* 4px */
+  --radius: 0.375rem;     /* 6px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-xl: 1rem;      /* 16px */
+  --radius-full: 9999px;
+  
+  /* 전환 효과 */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+  
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  
+  /* 터치 인터페이스 최적화 */
+  --touch-target-min: 44px; /* iOS 가이드라인 */
+  --touch-spacing: var(--spacing-4);
+  
+  /* 모바일 전용 그림자 */
+  --mobile-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+  --mobile-shadow-hover: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
+}
