@@ -7,17 +7,13 @@
 function getApiBaseUrl(): string {
   if (typeof window !== "undefined") {
     const hostname = window.location.hostname;
-    if (hostname === "mem.photos" || hostname.includes("mem.photos")) {
-      return "";
-    }
+    // localhost/127.0.0.1: VITE_API_BASE_URL 환경변수 또는 기본값 사용
     if (hostname === "localhost" || hostname === "127.0.0.1") {
       const envUrl = import.meta.env.VITE_API_BASE_URL as string | undefined;
       return envUrl !== undefined && envUrl !== "" ? envUrl : "http://localhost:8006";
     }
-  }
-  const envUrl = import.meta.env.VITE_API_BASE_URL as string | undefined;
-  if (envUrl !== undefined && envUrl !== "") {
-    return envUrl;
+    // 외부 도메인(역프록시 경유): 상대경로 사용 → Vite 프록시가 /api → backend:8000 전달
+    return "";
   }
   return "";
 }

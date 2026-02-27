@@ -46,7 +46,7 @@ services:
       - .env
     environment:
       # 시놀로지 역프록시(mem.photos:15175) 사용 시 빈 값으로 두면 상대 경로 사용. 로컬은 http://localhost:BACKEND_PORT
-      VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://localhost:8006}
+      VITE_API_BASE_URL: ${VITE_API_BASE_URL-}
       # /api 프록시 대상. 시놀로지에서 역프록시가 프론트만 받을 때 사용. 비우면 기본값 http://backend:8000
       VITE_PROXY_API_TARGET: ${VITE_PROXY_API_TARGET:-http://backend:8000}
       # 역프록시 경유 시 HMR WebSocket용 (예: VITE_HMR_HOST=mem.photos, VITE_HMR_PORT=15175)
