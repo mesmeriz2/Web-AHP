@@ -9,8 +9,6 @@ import Box from "@mui/material/Box";
 import Collapse from "@mui/material/Collapse";
 import { FiMenu, FiX, FiHome, FiFolder, FiUser } from "react-icons/fi";
 
-import ThemeSwitch from "./ThemeSwitch";
-
 interface HeaderProps {
   showSidebarToggle?: boolean;
   sidebarMobileOpen?: boolean;
@@ -187,10 +185,6 @@ const Header: React.FC<HeaderProps> = ({
           })}
         </Box>
 
-        {/* Theme switcher */}
-        <Box sx={{ display: "flex", alignItems: "center", ml: 1 }}>
-          <ThemeSwitch />
-        </Box>
       </Toolbar>
 
       {/* Mobile nav */}

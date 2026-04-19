@@ -401,7 +401,7 @@ const ParticipantPage = () => {
         )}
 
         {tasks && (
-          <div className="grid grid-cols-1 gap-5">
+          <div className="grid grid-cols-1" style={{ gap: "1.5rem" }}>
 
             {/* Project info + node selector */}
             <Card>

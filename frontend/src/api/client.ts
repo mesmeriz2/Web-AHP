@@ -10,7 +10,7 @@ function getApiBaseUrl(): string {
     // localhost/127.0.0.1: VITE_API_BASE_URL 환경변수 또는 기본값 사용
     if (hostname === "localhost" || hostname === "127.0.0.1") {
       const envUrl = import.meta.env.VITE_API_BASE_URL as string | undefined;
-      return envUrl !== undefined && envUrl !== "" ? envUrl : "http://localhost:8006";
+      return envUrl !== undefined && envUrl !== "" ? envUrl : "";
     }
     // 외부 도메인(역프록시 경유): 상대경로 사용 → Vite 프록시가 /api → backend:8000 전달
     return "";
