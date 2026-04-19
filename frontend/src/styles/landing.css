@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;700&display=swap");
 
 /* ═══════════════════════════════════════════════════════════
-   LANDING PAGE — Precision Dark
+   LANDING PAGE — Warm Parchment
    ═══════════════════════════════════════════════════════════ */
 
 .lp-root {
   min-height: 100vh;
-  background: #07090f;
-  color: #f0ebe2;
+  background: #f7f5f0;
+  color: #1a1714;
   font-family: "Noto Sans KR", "Segoe UI", sans-serif;
 }
 
@@ -22,10 +22,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem clamp(2rem, 6vw, 6rem);
-  background: rgba(7, 9, 15, 0.88);
+  background: rgba(247, 245, 240, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(200, 164, 67, 0.07);
+  border-bottom: 1px solid rgba(26, 23, 20, 0.08);
 }
 
 .lp-logo {
@@ -47,7 +47,7 @@
 .lp-logo-main {
   font-size: 0.96rem;
   font-weight: 700;
-  color: #f0ebe2;
+  color: #1a1714;
   font-family: "Noto Serif KR", Georgia, serif;
   line-height: 1.4;
 }
@@ -60,7 +60,7 @@
 
 .lp-nav-link {
   font-size: 0.8rem;
-  color: #5e6475;
+  color: #7a7268;
   text-decoration: none;
   letter-spacing: 0.02em;
   transition: color 150ms ease;
@@ -68,15 +68,15 @@
 }
 
 .lp-nav-link:hover {
-  color: #f0ebe2;
+  color: #1a1714;
 }
 
 .lp-nav-link--cta {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: #07090f;
-  background: #c8a443;
+  color: #f7f5f0;
+  background: #1a1714;
   border-radius: 2px;
   padding: 0.55rem 1.1rem;
   font-weight: 700;
@@ -87,8 +87,8 @@
 }
 
 .lp-nav-link--cta:hover {
-  background: #d4b05a;
-  color: #07090f;
+  background: #3a3530;
+  color: #f7f5f0;
 }
 
 /* ── Hero ─────────────────────────────────────────────────── */
@@ -111,12 +111,12 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(200, 164, 67, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(200, 164, 67, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(26, 23, 20, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 23, 20, 0.04) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(
     ellipse 90% 80% at 12% 42%,
-    rgba(0, 0, 0, 0.6) 10%,
+    rgba(0, 0, 0, 0.5) 10%,
     transparent 72%
   );
 }
@@ -125,8 +125,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 55% 65% at 4% 48%, rgba(200, 164, 67, 0.055) 0%, transparent 60%),
-    radial-gradient(ellipse 70% 90% at 95% 95%, rgba(7, 9, 15, 0.7) 0%, transparent 55%);
+    radial-gradient(ellipse 55% 65% at 4% 48%, rgba(200, 164, 67, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 90% at 95% 95%, rgba(200, 164, 67, 0.04) 0%, transparent 55%);
 }
 
 .lp-hero-inner {
@@ -144,7 +144,7 @@
   color: #c8a443;
   font-weight: 500;
   margin-bottom: 2.5rem;
-  opacity: 0.9;
+  opacity: 0.85;
   animation: lpFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
 }
 
@@ -154,7 +154,7 @@
   font-weight: 200;
   font-size: clamp(3.8rem, 9.5vw, 8rem);
   line-height: 1.0;
-  color: #f0ebe2;
+  color: #1a1714;
   letter-spacing: -0.04em;
   animation: lpFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
 }
@@ -178,7 +178,7 @@
 .lp-subtitle {
   margin: 0 0 3rem;
   font-size: clamp(1rem, 1.5vw, 1.1rem);
-  color: #5e6475;
+  color: #7a7268;
   line-height: 1.8;
   letter-spacing: 0.025em;
   animation: lpFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
@@ -196,8 +196,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #c8a443;
-  color: #07090f;
+  background: #1a1714;
+  color: #f7f5f0;
   font-weight: 700;
   font-size: 0.8rem;
   letter-spacing: 0.1em;
@@ -210,7 +210,7 @@
 }
 
 .lp-btn-primary:hover {
-  background: #d4b05a;
+  background: #3a3530;
   transform: translateY(-1px);
 }
 
@@ -219,9 +219,9 @@
   align-items: center;
   font-size: 0.8rem;
   letter-spacing: 0.06em;
-  color: #5e6475;
+  color: #7a7268;
   padding: 1rem 1.6rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(26, 23, 20, 0.15);
   border-radius: 2px;
   text-decoration: none;
   font-family: "Noto Sans KR", sans-serif;
@@ -229,22 +229,22 @@
 }
 
 .lp-btn-ghost:hover {
-  border-color: rgba(255, 255, 255, 0.22);
-  color: #f0ebe2;
+  border-color: rgba(26, 23, 20, 0.4);
+  color: #1a1714;
 }
 
 /* ── Stats ─────────────────────────────────────────────────── */
 .lp-stats-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid rgba(200, 164, 67, 0.1);
-  border-bottom: 1px solid rgba(200, 164, 67, 0.1);
-  background: rgba(0, 0, 0, 0.18);
+  border-top: 1px solid rgba(200, 164, 67, 0.2);
+  border-bottom: 1px solid rgba(200, 164, 67, 0.2);
+  background: rgba(200, 164, 67, 0.03);
 }
 
 .lp-stat {
   padding: clamp(2.2rem, 4vw, 4rem) clamp(2rem, 6vw, 5.5rem);
-  border-right: 1px solid rgba(200, 164, 67, 0.07);
+  border-right: 1px solid rgba(26, 23, 20, 0.06);
   display: flex;
   flex-direction: column;
 }
@@ -257,7 +257,7 @@
   font-family: "Noto Serif KR", Georgia, serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 200;
-  color: #f0ebe2;
+  color: #1a1714;
   line-height: 1.05;
   letter-spacing: -0.03em;
   margin-bottom: 0.65rem;
@@ -274,7 +274,7 @@
 
 .lp-stat-note {
   font-size: 0.76rem;
-  color: #2e3140;
+  color: #a8a09a;
 }
 
 /* ── Feature list ─────────────────────────────────────────── */
@@ -288,7 +288,7 @@
   align-items: center;
   gap: 2.5rem;
   padding: clamp(1.6rem, 2.8vw, 2.8rem) 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(26, 23, 20, 0.06);
   cursor: default;
   transition: all 220ms ease;
 }
@@ -302,13 +302,13 @@
 }
 
 .lp-feature:hover .lp-feature-rule {
-  background: rgba(200, 164, 67, 0.2);
+  background: rgba(200, 164, 67, 0.25);
 }
 
 .lp-feature-num {
   font-family: "DM Mono", "Consolas", monospace;
   font-size: 0.65rem;
-  color: #2e3140;
+  color: #a8a09a;
   letter-spacing: 0.06em;
   flex-shrink: 0;
 }
@@ -316,7 +316,7 @@
 .lp-feature-title {
   font-size: clamp(1.15rem, 2.2vw, 1.7rem);
   font-weight: 600;
-  color: #f0ebe2;
+  color: #1a1714;
   font-family: "Noto Serif KR", Georgia, serif;
   transition: color 220ms ease;
   letter-spacing: -0.025em;
@@ -324,7 +324,7 @@
 
 .lp-feature-desc {
   font-size: 0.72rem;
-  color: #2e3140;
+  color: #a8a09a;
   letter-spacing: 0.08em;
   font-family: "DM Mono", "Consolas", monospace;
   white-space: nowrap;
@@ -333,64 +333,40 @@
 
 .lp-feature-rule {
   height: 1px;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(26, 23, 20, 0.06);
   transition: background 220ms ease;
 }
 
 /* ── Animations ─────────────────────────────────────────────── */
 @keyframes lpFadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes lpRuleGrow {
-  from {
-    width: 0;
-    opacity: 0;
-  }
-  to {
-    width: 3.5rem;
-    opacity: 1;
-  }
+  from { width: 0; opacity: 0; }
+  to   { width: 3.5rem; opacity: 1; }
 }
 
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .lp-header {
-    padding: 1rem 1.5rem;
-  }
+  .lp-header { padding: 1rem 1.5rem; }
 
-  .lp-nav-link:not(.lp-nav-link--cta) {
-    display: none;
-  }
+  .lp-nav-link:not(.lp-nav-link--cta) { display: none; }
 
-  .lp-hero-inner {
-    padding: 6rem 1.5rem 3.5rem;
-  }
+  .lp-hero-inner { padding: 6rem 1.5rem 3.5rem; }
 
-  .lp-stats-section {
-    grid-template-columns: 1fr;
-  }
+  .lp-stats-section { grid-template-columns: 1fr; }
 
   .lp-stat {
     border-right: none;
-    border-bottom: 1px solid rgba(200, 164, 67, 0.07);
+    border-bottom: 1px solid rgba(26, 23, 20, 0.06);
     padding: 1.8rem 1.5rem;
   }
 
-  .lp-stat:last-child {
-    border-bottom: none;
-  }
+  .lp-stat:last-child { border-bottom: none; }
 
-  .lp-features {
-    padding: 0 1.5rem;
-  }
+  .lp-features { padding: 0 1.5rem; }
 
   .lp-feature {
     grid-template-columns: 2.5rem 1fr;
@@ -398,13 +374,9 @@
   }
 
   .lp-feature-desc,
-  .lp-feature-rule {
-    display: none;
-  }
+  .lp-feature-rule { display: none; }
 }
 
 @media (max-width: 480px) {
-  .lp-title {
-    font-size: clamp(3rem, 13vw, 4.5rem);
-  }
+  .lp-title { font-size: clamp(3rem, 13vw, 4.5rem); }
 }
