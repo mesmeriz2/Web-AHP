@@ -21,10 +21,8 @@ _DEFAULT_CORS_ORIGINS = [
     "http://127.0.0.1:5175",
     "https://localhost",
     "http://localhost",
-    "https://mem.photos",
-    "http://mem.photos",
-    "https://mem.photos:15175",
-    "http://mem.photos:15175",
+    "https://blinktask.work",
+    "http://blinktask.work",
 ]
 _env_cors = os.getenv("CORS_ORIGINS", "").strip()
 _env_origins = [o.strip() for o in _env_cors.split(",") if o.strip()]

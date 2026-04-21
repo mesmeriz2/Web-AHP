@@ -5,6 +5,7 @@ export default defineConfig(({ mode }) => {
   // .env / .env.local 을 루트 디렉터리에서 직접 로드 (process.env 타이밍 문제 우회)
   const env = loadEnv(mode, "..", "");
 
+  const hmrDisabled = env.VITE_HMR_DISABLED === "true";
   const hmrHost = env.VITE_HMR_HOST?.trim();
   const hmrPort = env.VITE_HMR_PORT ? Number(env.VITE_HMR_PORT) : 0;
   const useProxyHmr = Boolean(hmrHost && Number.isFinite(hmrPort) && hmrPort > 0);
@@ -19,7 +20,7 @@ export default defineConfig(({ mode }) => {
       host: "0.0.0.0",
       port: 5173,
       allowedHosts: true,
-      hmr: useProxyHmr ? { protocol: "wss", host: hmrHost, clientPort: hmrPort } : true,
+      hmr: hmrDisabled ? false : useProxyHmr ? { protocol: "wss", host: hmrHost, clientPort: hmrPort } : true,
       proxy: {
         "/api": {
           target: proxyApiTarget,
